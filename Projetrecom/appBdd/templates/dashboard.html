@@ -1,0 +1,79 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+</head>
+<body>
+    <div class="container mt-4">
+        <table id="example" class="table table-striped" style="width:100%">
+            <table>
+                <thead>
+                  <tr>
+                    <th>ID prospect</th>
+                    <th>Company name</th>
+                    <th>Civilité</th>
+                    <th>Prénom</th>
+                    <th>Nom de famille</th>
+                    <th>Fonction</th>
+                    <th>Email</th>
+                    <th>URL LinkedIn</th>
+                    <th>Téléphone</th>
+                    <th>Ligne directe/Mobile</th>
+                    <th>Site web</th>
+                    <th>Siret</th>
+                    <th>Adresse - Rue</th>
+                    <th>Adresse - CP</th>
+                    <th>Adresse - Ville</th>
+                    <th>Département</th>
+                    <th>Campagne</th>
+                    <th>Secteur d'activité</th>
+                    <th>Effectif</th>
+                    <th>CA</th>
+                    <th>Code NAF</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for prospect in donnees %}
+                    <tr>
+                      <td>{{ prospect.id_prospect }}</td>
+                      <td>{{ prospect.company_name }}</td>
+                      <td>{{ prospect.civility }}</td>
+                      <td>{{ prospect.first_name }}</td>
+                      <td>{{ prospect.last_name }}</td>
+                      <td>{{ prospect.function }}</td>
+                      <td>{{ prospect.email }}</td>
+                      <td>{{ prospect.linkedin_url }}</td>
+                      <td>{{ prospect.phone_number }}</td>
+                      <td>{{ prospect.direct_phone_number }}</td>
+                      <td>{{ prospect.website }}</td>
+                      <td>{{ prospect.siret }}</td>
+                      <td>{{ prospect.address.street }}</td>
+                      <td>{{ prospect.address.postal_code }}</td>
+                      <td>{{ prospect.address.city }}</td>
+                      <td>{{ prospect.address.department }}</td>
+                      <td>{{ prospect.campaign }}</td>
+                      <td>{{ prospect.industry }}</td>
+                      <td>{{ prospect.effectif }}</td>
+                      <td>{{ prospect.ca }}</td>
+                      <td>{{ prospect.code_naf }}</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>              
+    </div>
+    <script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    });
+    </script>
+</body>
+</html>
