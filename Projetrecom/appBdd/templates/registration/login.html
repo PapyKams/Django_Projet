@@ -15,7 +15,7 @@
 
 <body>
     <div class="loginBox"> 
-        <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
+        <img class="user" src="{% static 'images/recom_logo.png' %}" height="100px" width="100px">
         <h3>Accès Base de données</h3>
         <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
