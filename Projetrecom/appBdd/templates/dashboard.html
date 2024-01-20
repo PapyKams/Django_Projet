@@ -14,65 +14,64 @@
 </head>
 <body>
     <div class="container mt-4">
-        <table id="example" class="table table-striped" style="width:100%">
-            <table>
-                <thead>
-                  <tr>
-                    <th>ID prospect</th>
-                    <th>Company name</th>
+        <table id="Prospect" class="table table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Campagne</th>
+                    <th>Société</th>
                     <th>Civilité</th>
                     <th>Prénom</th>
-                    <th>Nom de famille</th>
+                    <th>Nom</th>
                     <th>Fonction</th>
                     <th>Email</th>
-                    <th>URL LinkedIn</th>
+                    <th>LinkedIn</th>
                     <th>Téléphone</th>
-                    <th>Ligne directe/Mobile</th>
+                    <th>Ligne directe</th>
                     <th>Site web</th>
                     <th>Siret</th>
                     <th>Adresse - Rue</th>
                     <th>Adresse - CP</th>
                     <th>Adresse - Ville</th>
                     <th>Département</th>
-                    <th>Campagne</th>
                     <th>Secteur d'activité</th>
                     <th>Effectif</th>
                     <th>CA</th>
                     <th>Code NAF</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {% for prospect in donnees %}
-                    <tr>
-                      <td>{{ prospect.id_prospect }}</td>
-                      <td>{{ prospect.company_name }}</td>
-                      <td>{{ prospect.civility }}</td>
-                      <td>{{ prospect.first_name }}</td>
-                      <td>{{ prospect.last_name }}</td>
-                      <td>{{ prospect.function }}</td>
-                      <td>{{ prospect.email }}</td>
-                      <td>{{ prospect.linkedin_url }}</td>
-                      <td>{{ prospect.phone_number }}</td>
-                      <td>{{ prospect.direct_phone_number }}</td>
-                      <td>{{ prospect.website }}</td>
-                      <td>{{ prospect.siret }}</td>
-                      <td>{{ prospect.address.street }}</td>
-                      <td>{{ prospect.address.postal_code }}</td>
-                      <td>{{ prospect.address.city }}</td>
-                      <td>{{ prospect.address.department }}</td>
-                      <td>{{ prospect.campaign }}</td>
-                      <td>{{ prospect.industry }}</td>
-                      <td>{{ prospect.effectif }}</td>
-                      <td>{{ prospect.ca }}</td>
-                      <td>{{ prospect.code_naf }}</td>
-                    </tr>
-                  {% endfor %}
-                </tbody>
-              </table>              
+                    <th>ID prospect</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for prospect in prospects %}
+                <tr>
+                    <td>{{ prospect.campaign }}</td>
+                    <td>{{ prospect.company_name }}</td>
+                    <td>{{ prospect.civility }}</td>
+                    <td>{{ prospect.first_name }}</td>
+                    <td>{{ prospect.last_name }}</td>
+                    <td>{{ prospect.function }}</td>
+                    <td>{{ prospect.email }}</td>
+                    <td>{{ prospect.linkedin_url }}</td>
+                    <td>{{ prospect.phone_number }}</td>
+                    <td>{{ prospect.direct_phone_number }}</td>
+                    <td>{{ prospect.website }}</td>
+                    <td>{{ prospect.siret }}</td>
+                    <td>{{ prospect.address_street }}</td>
+                    <td>{{ prospect.address_postal_code }}</td>
+                    <td>{{ prospect.address_city }}</td>
+                    <td>{{ prospect.address_department }}</td>
+                    <td>{{ prospect.industry }}</td>
+                    <td>{{ prospect.effectif }}</td>
+                    <td>{{ prospect.ca }}</td>
+                    <td>{{ prospect.code_naf }}</td>
+                    <td>{{ prospect.id_prospect }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>              
     </div>
     <script>
     $(document).ready(function() {
-        $('#example').DataTable();
+        $('#Prospect').DataTable();
     });
     </script>
 </body>

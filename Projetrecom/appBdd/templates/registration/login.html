@@ -27,7 +27,11 @@
         </form> 
         <a href="{% url 'password_reset' %}">Forget Password</a>
         <div class="text-center">
-           
+            {% if error %}
+            <div>{{ error }}</div>
+        {% endif %}
+        <!-- Le reste de votre formulaire de connexion -->
+          
     </div>
     <!-- Scripts Bootstrap (optionnel) -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>

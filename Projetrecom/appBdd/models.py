@@ -1,6 +1,7 @@
 from django.db import models
 
 class Prospect(models.Model):
+    campaign = models.CharField(max_length=100)
     company_name = models.CharField(max_length=255)
     civility = models.CharField(max_length=50)
     first_name = models.CharField(max_length=100)
@@ -16,7 +17,6 @@ class Prospect(models.Model):
     address_zip = models.CharField(max_length=10)
     address_city = models.CharField(max_length=100)
     department = models.CharField(max_length=100)
-    campaign = models.CharField(max_length=100)
     sector = models.CharField(max_length=100)
     workforce = models.IntegerField(blank=True, null=True)
     revenue = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
