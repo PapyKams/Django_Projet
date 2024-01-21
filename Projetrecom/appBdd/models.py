@@ -23,4 +23,4 @@ class Prospect(models.Model):
     naf_code = models.CharField(max_length=10, blank=True, null=True)
 
     def __str__(self):
-        return self.company_name
+        return self.campaign
