@@ -25,8 +25,7 @@ from django.conf.urls.static import static  # Importation corrigée
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/login/', login_view, name='login'),
-    path('accounts/', include('django.contrib.auth.urls')),
-    
+    path('accounts/', include('django.contrib.auth.urls')), 
     path('dashboard/', dashboard_view, name='dashboard'),
     path("__debug__/", include("debug_toolbar.urls")),
 

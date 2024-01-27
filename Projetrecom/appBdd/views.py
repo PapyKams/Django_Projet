@@ -19,6 +19,10 @@ def login_view(request):
             return render(request, 'registration/login.html', {'error': 'Invalid credentials'})
     return render(request, 'registration/login.html')
 
+def dashboard(request):
+    prospects = Prospect.objects.all()  # Assurez-vous que cette requête récupère les données.
+    return render(request, 'dashboard.html', {'prospects': prospects})
+
 
 @login_required
 def dashboard_view(request):
