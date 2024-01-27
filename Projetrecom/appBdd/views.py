@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from .models import Prospect # Assurez-vous que le modèle Prospect est importé
+from .models import prospect # Assurez-vous que le modèle prospect est importé
 
   
 def login_view(request):
@@ -20,12 +20,12 @@ def login_view(request):
     return render(request, 'registration/login.html')
 
 def dashboard(request):
-    prospects = Prospect.objects.all()  # Assurez-vous que cette requête récupère les données.
+    prospects = prospect.objects.all()  # Assurez-vous que cette requête récupère les données.
     return render(request, 'dashboard.html', {'prospects': prospects})
 
 
 @login_required
 def dashboard_view(request):
-    donnees = Prospect.objects.all()  # Assurez-vous que c'est le bon modèle
+    donnees = prospect.objects.all()  # Assurez-vous que c'est le bon modèle
     return render(request, 'dashboard.html', {'donnees': donnees})
 

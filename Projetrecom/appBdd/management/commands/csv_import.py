@@ -1,5 +1,5 @@
 import csv
-from appBdd.models import Prospect
+from appBdd.models import prospect
 from django.core.management.base import BaseCommand
 
 def to_decimal(value):
@@ -20,7 +20,7 @@ class Command(BaseCommand):
         with open(options['csv_file_path'], newline='', encoding='utf-8') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
-                prospect = Prospect(
+                prospect = prospect(
                     campaign=row['Campagne'],
                     company_name=row['Company name'],
                     civility=row['Civilité'],
@@ -44,5 +44,5 @@ class Command(BaseCommand):
                 )
                 prospects.append(prospect)
 
-        Prospect.objects.bulk_create(prospects)
+        prospect.objects.bulk_create(prospects)
         self.stdout.write(self.style.SUCCESS(f"{len(prospects)} prospects importés avec succès."))

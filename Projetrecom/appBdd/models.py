@@ -1,6 +1,6 @@
 from django.db import models
 
-class Prospect(models.Model):
+class prospect(models.Model):
     campaign = models.CharField(max_length=255, null=True, blank=True)
     company_name = models.CharField(max_length=255)
     civility = models.CharField(max_length=255, null=True, blank=True)
@@ -42,7 +42,7 @@ class Prospect(models.Model):
         self.revenue = self.revenue[:255]
         self.naf_code = self.naf_code[:255]
 
-        super(Prospect, self).save(*args, **kwargs)
+        super(prospect, self).save(*args, **kwargs)
 
     class Meta:
         db_table = 'prospect'
